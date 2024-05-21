@@ -1,0 +1,242 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+/* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.menu-toggle {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+
+
+.menu {
+  display: none;
+}
+
+.menu.open {
+  display: block;
+}
+
+.nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #444;
+  opacity: 0.9;
+}
+
+.nav li {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #555;
+  width: 100%;
+}
+
+.nav li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.nav li a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 1rem;
+}
+
+.products {
+  text-align: center;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.carousel-inner {
+  display: flex;
+
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 1; /* Ensure the buttons are above the carousel items */
+}
+
+.carousel-control.prev {
+  left: 0;
+}
+
+.carousel-control.next {
+  right: 0;
+}
+
+.cart {
+  text-align: center;
+}
+
+#cart-items {
+  list-style-type: none;
+  padding: 0;
+}
+
+#cart-items li {
+  margin-bottom: 0.5rem;
+}
+
+#checkout-button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#checkout-button:hover {
+  background-color: #555;
+}
+
+.checkout {
+  text-align: center;
+  display: none;
+}
+
+.checkout input[type="text"],
+.checkout input[type="email"],
+.checkout input[type="tel"] {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.checkout button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.checkout button:hover {
+  background-color: #555;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Responsividade */
+@media (min-width: 600px) {
+  .menu-toggle {
+    display: none;
+  }
+  .menu {
+    display: block !important;
+  }
+  .nav {
+    flex-direction: row;
+    background-color: transparent;
+    opacity: 1;
+  }
+  .nav li {
+    border: none;
+    padding: 0 1rem;
+  }
+  .nav li a {
+    color: white;
+    text-decoration: none;
+  }
+  .menu-toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-toggle {
+    display: block;
+    order: 1; /* Altera a ordem do ícone de hambúrguer */
+  }
+  .menu {
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+  .menu.open {
+    max-height: 200px;
+  }
+  .nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .menu-toggle {
+    order: 2; /* Mantém o ícone de hambúrguer por último */
+  }
+
+  .carousel-control {
+    padding: 0.5rem; /* Adjust padding for smaller screens */
+  }
+}
