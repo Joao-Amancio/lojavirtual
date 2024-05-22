@@ -72,10 +72,10 @@ nav ul li a {
 
 .carousel {
   position: relative;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .carousel-container {
@@ -168,7 +168,7 @@ form button {
   }
   nav {
     position: absolute;
-    top: 100px; /* Ajuste conforme a altura do cabeçalho */
+    top: 101px; /* Ajuste conforme a altura do cabeçalho */
     left: 0;
     width: 100%;
     background-color: #333;
@@ -176,6 +176,7 @@ form button {
     flex-direction: column;
     align-items: center;
     z-index: 1000;
+    opacity: 0.9;
   }
   nav ul {
     flex-direction: column;
